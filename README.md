@@ -95,17 +95,17 @@ for (const char of alpha) {
 defaultWidth = (defaultWidth / alpha.length).toFixed(2);
 
 const [fkey, ...keys] = Object.keys(lookup);
-let liquidFont = `{% if "${lookup[fkey]}" contains l %}{% assign p = ${fkey} %}`;
+let liquidFont = `{%if "${lookup[fkey]}" contains l%}{%assign p=${fkey}%}`;
 for (const key of keys) {
-    liquidFont += `{% elsif "${lookup[key]}" contains l %}{% assign p = ${key} %}`;
+    liquidFont += `{%elsif "${lookup[key]}" contains l%}{%assign p=${key}%}`;
 }
-liquidFont += `{% else %}{% assign p = ${defaultWidth} %}{% endif %}`;
+liquidFont += `{%else%}{%assign p=${defaultWidth}%}{%endif%}`;
 
 console.log(`
-{% assign maxWidth = ... %}
+{% assign maxWidth= ... %}
 {% assign words = null | concat: ... | concat: ... %}
 /* Start: Auto generated font adjustment */
-{% assign maxSize = 0 %}{% for w in words %}{% assign c = 0 %}{% assign s = w | split: "" %}{% for l in s %}${liquidFont}{% assign c = c | plus: p %}{% endfor %}{% if c > maxSize %}{% assign maxSize = c %}{% endif %}{% endfor %}{% assign factor = 1 %}{% if maxSize > maxWidth %}{% assign factor = maxWidth | divided_by: maxSize %}{% endif %}
+{%assign maxSize=0%}{%for w in words%}{%assign c=0%}{%assign s=w|split:""%}{%for l in s%}${liquidFont}{%assign c=c|plus:p%}{%endfor%}{%if c>maxSize%}{%assign maxSize=c%}{%endif%}{%endfor%}{%assign factor=1%}{%if maxSize>maxWidth%}{%assign factor=maxWidth|divided_by:maxSize%}{%endif%}
 /* End */
 `.trim());
 ```
