@@ -4,6 +4,22 @@ Helper script to automatically adjust the font size in Liquid templates.
 The setup makes sure that one or more variable texts don't overflow in width and instead get their font-size adjusted.
 This is especially helpful for On-Site Badges, since they don't support JavaScript.
 
+<table>
+  <tr>
+    <td>
+      <img height="300" alt="image" src="https://github.com/user-attachments/assets/2426aa82-fe01-411e-a7dd-0fb2b976768f" />
+      <br>
+      Normal name length
+    </td>
+    <td>
+      <img height="300" alt="image" src="https://github.com/user-attachments/assets/041307f2-e24f-4a89-97aa-20e043993d11" />
+      <br>
+      Extraordinary long name
+    </td>
+  </tr>
+</table>
+
+
 # Setup
 ## Step 1: Create template
 Create your HTML+Liquid template as usual. If any, upload all used fonts to AWS.
