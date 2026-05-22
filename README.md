@@ -73,7 +73,7 @@ For example it could look like that:
 Copy the following code:
 ```js
 const element = document.getElementById("font-test");
-const special = "ßẞ .,-_+*'/\\?!()&%\"={}|[]:@";
+const special = "ßẞ .,-_*'/()";
 const l = "abcdefghijklmnopqrstuvxyzäöü";
 const alpha = l + l.toUpperCase() + special;
 
@@ -94,10 +94,18 @@ for (const char of alpha) {
 }
 defaultWidth = (defaultWidth / alpha.length).toFixed(2);
 
+function condition(letters) {
+  if (letters.length > 1) {
+    return `"${letters}" contains l`;
+  } else {
+    return `"${letters}"==l`;
+  }
+}
+
 const [fkey, ...keys] = Object.keys(lookup);
-let liquidFont = `{%if "${lookup[fkey]}" contains l%}{%assign p=${fkey}%}`;
+let liquidFont = `{%if ${condition(lookup[fkey])}%}{%assign p=${fkey}%}`;
 for (const key of keys) {
-    liquidFont += `{%elsif "${lookup[key]}" contains l%}{%assign p=${key}%}`;
+    liquidFont += `{%elsif ${condition(lookup[key])}%}{%assign p=${key}%}`;
 }
 liquidFont += `{%else%}{%assign p=${defaultWidth}%}{%endif%}`;
 
