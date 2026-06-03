@@ -201,3 +201,10 @@ The biggest factor is the DPI and real-world units like `mm` are aware of this.
 Using these units makes your badge design reproducible and easier to debug in case of alignment/placement/sizing issues.
 
 This applies to all CSS rules, including `font-size`, `padding` etc.
+
+## Reserved Class Names
+Do not use certain class names, as they are (for some reason) already defined in the badge.
+Following known class names (list to be expanded) break the layout:
+```
+content
+```
