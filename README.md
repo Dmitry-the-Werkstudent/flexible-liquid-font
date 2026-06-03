@@ -202,6 +202,9 @@ Using these units makes your badge design reproducible and easier to debug in ca
 
 This applies to all CSS rules, including `font-size`, `padding` etc.
 
+Note: even though we use pixels for the `maxWidth` measurement in Liquid, this unit is not considered relative,
+since the letter sizes are static as well, and just scale proportionally.
+
 ## Reserved Class Names
 Do not use certain class names, as they are (for some reason) already defined in the badge.
 Following known class names (list to be expanded) break the layout:
