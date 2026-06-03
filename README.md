@@ -192,3 +192,12 @@ And use it on your HTML like this:
       {{attendees[0].last_name}}
   </div>
 ```
+
+# Tips and Tricks
+## Measurement Units
+Do not use relative units like `px`, `pt` etc. in CSS, use real-world units like `mm`, `cm`!
+
+The biggest factor is the DPI and real-world units like `mm` are aware of this.
+Using these units makes your badge design reproducible and easier to debug in case of alignment/placement/sizing issues.
+
+This applies to all CSS rules, including `font-size`, `padding` etc.
