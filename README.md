@@ -54,11 +54,11 @@ html, body {
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Badge</title>
         <style>
-          <!-- CSS rules -->
+          /* CSS rules */
         </style>
     </head>
     <body>
-        <div class="container">
+        <div id="container">
           <!-- the rest of the badge code goes in here -->
         </div>
     </body>
