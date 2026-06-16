@@ -36,7 +36,7 @@ html, body {
 
 @page {
   height: 10.0cm; /* badge height in cm/mm/in */
-  width: 10.0cm /* badge width in cm/mm/in */
+  width: 10.0cm; /* badge width in cm/mm/in */
 }
 
 #container {
@@ -214,7 +214,7 @@ content
 
 ## Placement
 To test out the placement of elements during development, use the following CSS on the `#container` element:
-```
+```css
 #container {
   background-image: url('./path/to/image.png');
   background-size: 100% 100%;
