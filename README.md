@@ -211,3 +211,17 @@ Following known class names (list to be expanded) break the layout:
 ```
 content
 ```
+
+## Placement
+To test out the placement of elements during development, use the following CSS on the `#container` element:
+```
+#container {
+  background-image: url('./path/to/image.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  border: 1px solid red;
+  box-sizing: border-box;
+}
+```
+Replace `./path/to/image.png` with the ticket design.
